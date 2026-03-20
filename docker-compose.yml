@@ -10,6 +10,9 @@ services:
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0 
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     # El pendrive sigue aquí, a salvo (Volumen para almacenar datos si la app lo requiere)
     volumes:
       - python_academy_data:/app/data
@@ -34,3 +37,4 @@ services:
 
 volumes:
   python_academy_data:
+    driver: local
